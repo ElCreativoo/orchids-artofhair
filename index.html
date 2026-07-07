@@ -112,19 +112,25 @@ nav.scrolled {
     overflow:hidden;
 }
 
-.hero:before {
-    content:"";
+.hero-video {
     position:absolute;
     inset:0;
-    background:
-    linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.15)),
-    url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=80");
-    background-size:cover;
-    background-position:center;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:0;
+}
+
+.hero-overlay {
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.15));
+    z-index:1;
 }
 
 .hero-content {
     position:relative;
+    z-index:2;
     color:white;
     animation:fadeUp 1.2s ease;
 }
@@ -413,6 +419,10 @@ footer h2 {
 
 
 <section class="hero">
+<video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=80">
+<source src="https://coverr.co/s3/mp4/Hairdressing-Salon.mp4" type="video/mp4">
+</video>
+<div class="hero-overlay"></div>
 <div class="container hero-content">
 
 <div class="label">Premium Coiffeur · Schlieren Zürich</div>
