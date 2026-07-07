@@ -219,7 +219,7 @@ nav.scrolled .hamburger span {
     background:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1920&q=80') center/cover;
 }
 
-.hero-video-wrapper iframe {
+.hero-video-wrapper video {
     position:absolute;
     top:50%;
     left:50%;
@@ -229,7 +229,7 @@ nav.scrolled .hamburger span {
     min-height:100%;
     transform:translate(-50%,-50%);
     pointer-events:none;
-    border:none;
+    object-fit:cover;
 }
 
 .hero-overlay {
@@ -617,7 +617,11 @@ footer h2 {
 
 <section class="hero">
 
-<div class="hero-video-wrapper" id="heroVideoWrapper"></div>
+<div class="hero-video-wrapper">
+<video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1920&q=80">
+<source src="hero.mp4" type="video/mp4">
+</video>
+</div>
 
 <div class="hero-overlay"></div>
 <div class="container hero-content">
@@ -974,22 +978,6 @@ mobileMenu.classList.remove("open");
 document.body.style.overflow="";
 });
 });
-
-// YouTube background video
-const heroWrapper=document.getElementById("heroVideoWrapper");
-
-function initYouTubeBg(){
-const isMobile=window.innerWidth<768;
-if(isMobile) return;
-
-const iframe=document.createElement("iframe");
-iframe.src="https://www.youtube.com/embed/PzpN8jy5Dbo?autoplay=1&mute=1&loop=1&playlist=PzpN8jy5Dbo&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3";
-iframe.allow="autoplay; encrypted-media";
-iframe.title="Hair Salon Background";
-heroWrapper.appendChild(iframe);
-}
-
-initYouTubeBg();
 
 </script>
 
