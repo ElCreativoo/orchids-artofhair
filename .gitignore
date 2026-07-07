@@ -2,3 +2,4 @@ node_modules
 .bun
 bun.lock
 bun.lockb
+.orchids/files/
