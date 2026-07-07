@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": null,
-  "installCommand": null,
+  "buildCommand": "",
+  "installCommand": "",
   "framework": null
 }
